@@ -6,6 +6,7 @@
 		key：param1...paramN,或者参数的索引也可以
 		value：传入的参数值
 	#{}就是从map中获取指定的key的值；
+	select * from tbl_employee where id=#{param1} and last_name=#{param2}
 	
 	异常：
 	org.apache.ibatis.binding.BindingException: 
@@ -16,6 +17,8 @@
 		取值：#{id},#{lastName}
 
 【命名参数】：明确指定封装参数时map的key；@Param("id")
+ public void deleteEmpById(@Param("id") Integer id);
+
 	多个参数会被封装成 一个map，
 		key：使用@Param注解指定的值
 		value：参数值
@@ -42,6 +45,7 @@ public Employee getEmp(@Param("id")Integer id,String lastName);
 	取值：id==>#{id/param1}   lastName==>#{param2}
 
 public Employee getEmp(Integer id,@Param("e")Employee emp);
+第二个参数e也是封装入map中
 	取值：id==>#{param1}    lastName===>#{param2.lastName/e.lastName}
 
 ##特别注意：如果是Collection（List、Set）类型或者是数组，
