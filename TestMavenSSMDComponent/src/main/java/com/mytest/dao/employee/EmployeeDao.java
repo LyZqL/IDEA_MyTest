@@ -44,4 +44,8 @@ public interface EmployeeDao {
     public Employee getEmpByLastname(String lastName);
 
     public Employee getEmpAndDept(Integer id);
+
+    public Employee getEmpByIdStep(Integer id);
+
+    public List<Employee> getEmpsByDeptId(Integer deptId);
 }
