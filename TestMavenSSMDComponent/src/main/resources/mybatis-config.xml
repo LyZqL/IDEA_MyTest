@@ -28,7 +28,8 @@
         <setting name="jdbcTypeForNull" value="NULL"/>
 
         <!--显式的指定每个我们需要更改的配置的值，即使他是默认的。防止版本更新带来的问题  -->
-        <!--开启缓存-->
+        <!--开启全局二级缓存配置-->
+        <!--注意我们的POJO需要实现序列化接口-->
         <setting name="cacheEnabled" value="true"/>
         <!--开启懒加载-->
         <setting name="lazyLoadingEnabled" value="true"/>

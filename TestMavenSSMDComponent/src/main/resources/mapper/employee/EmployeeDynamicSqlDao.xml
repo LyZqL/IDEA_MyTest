@@ -156,7 +156,7 @@
     <!--MySQL下批量保存：可以foreach遍历   mysql支持values(),(),()语法-->
     <insert id="addEmps">
         insert into tbl_employee(
-        /*使用include标签可以抽取共通的片段*/
+        /*使用include标签来引用抽取的共通语句*/
         <include refid="insertColumn"></include>
         )
         values

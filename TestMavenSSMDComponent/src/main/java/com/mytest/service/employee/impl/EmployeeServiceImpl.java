@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 
 @Service
@@ -17,6 +18,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private EmployeeDao employeeDao;
 
+    /*用来进行批量操作*/
     @Autowired
     private SqlSession sqlSession;
 
@@ -28,8 +30,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<Employee> getEmps() {
         System.out.println("getEmps()........");
-        //
+        //获取接口实现类对象
         //EmployeeMapper mapper = sqlSession.getMapper(EmployeeDao.class);
+        //        for (int i = 0; i < 10000; i++) {
+        //            mapper.addEmp(new Employee(UUID.randomUUID().toString().substring(0, 5), "b", "1"));
+        //        }
         return employeeDao.getEmps();
     }
 

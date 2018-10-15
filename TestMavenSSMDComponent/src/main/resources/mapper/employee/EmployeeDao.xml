@@ -4,7 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--命名空间绑定DAO全类名-->
 <mapper namespace="com.mytest.dao.employee.EmployeeDao">
-
+    <!--开启使用二级缓存,需要首先全局配置中开启,同时实现pojo的序列化-->
+    <!--<cache eviction="FIFO" flushInterval="60000" readOnly="false" size="1024"></cache>-->
+    <!--使用第三方缓存,需要加入配置文件/ehcache.xml-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
 
     <!--自定义某个javaBean的封装规则
     type：自定义规则的Java类型
