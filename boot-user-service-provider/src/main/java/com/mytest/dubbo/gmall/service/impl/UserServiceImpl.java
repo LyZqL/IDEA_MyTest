@@ -15,7 +15,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 @Component
 public class UserServiceImpl implements UserService {
 
-    @HystrixCommand
+    @HystrixCommand//服务容错
     @Override
     public List<UserAddress> getUserAddressList(String userId) {
         // TODO Auto-generated method stub

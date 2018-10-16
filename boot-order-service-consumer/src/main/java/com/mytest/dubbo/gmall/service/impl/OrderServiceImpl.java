@@ -17,8 +17,6 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
  * 2）、配置服务提供者
  * <p>
  * 2、让服务消费者去注册中心订阅服务提供者的服务地址
- *
- * @author lfy
  */
 @Service
 public class OrderServiceImpl implements OrderService {
