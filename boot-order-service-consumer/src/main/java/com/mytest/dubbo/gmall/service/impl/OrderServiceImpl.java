@@ -24,10 +24,12 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 public class OrderServiceImpl implements OrderService {
 
     //@Autowired
-    @Reference(loadbalance = "random", timeout = 1000) //dubbo直连
-            UserService userService;
+    //@Reference(url = "127.0.0.1:20881")  //绕过注册中心,进行dubbo直连
+    //loadbalance--远程调用轮询策略
+    @Reference(loadbalance = "random", timeout = 1000)
+    UserService userService;
 
-    @HystrixCommand(fallbackMethod = "hello")
+    @HystrixCommand(fallbackMethod = "hello")//整合Hystrix进行服务容错  指定出现错误运行的方法hello
     @Override
     public List<UserAddress> initOrder(String userId) {
         // TODO Auto-generated method stub
@@ -40,7 +42,6 @@ public class OrderServiceImpl implements OrderService {
 
     public List<UserAddress> hello(String userId) {
         // TODO Auto-generated method stub
-
         return Arrays.asList(new UserAddress(10, "测试地址", "1", "测试", "测试", "Y"));
     }
 

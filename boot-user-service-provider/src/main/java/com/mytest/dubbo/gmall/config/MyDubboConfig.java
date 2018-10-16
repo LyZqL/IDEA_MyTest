@@ -13,6 +13,8 @@ import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.ServiceConfig;
 import com.mytest.dubbo.gmall.service.UserService;
 
+
+//使用注解API的方式整合dubbo
 @Configuration
 public class MyDubboConfig {
 

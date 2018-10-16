@@ -11,7 +11,7 @@ import com.mytest.dubbo.gmall.service.UserService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 
-@Service//暴露服务 
+@Service//暴露服务 这个是dubbo的注解
 @Component
 public class UserServiceImpl implements UserService {
 
